@@ -7,6 +7,8 @@ import (
 	"os"
 	"path/filepath"
 	"time"
+
+	"github.com/joho/godotenv"
 )
 
 type Message struct {
@@ -38,6 +40,8 @@ func iterate(path string) error {
 }
 
 func main() {
+	godotenv.Load()
+
 	currentDirectory, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
